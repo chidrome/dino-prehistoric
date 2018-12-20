@@ -9,6 +9,10 @@ creaturesData = JSON.parse(creaturesData);
 router.use(express.urlencoded({extended: false}));
 
 // prehistoric creatures route
-router.get('/prehistoric_creatures', function(req, res){
-	res.render('prehistoric_creatures/prehistoric_creatures', {myCreatures: creaturesData});
+router.get('/', function(req, res){
+	res.render('creatures/index', {myCreatures: creaturesData});
 });
+
+
+//tell node to export router object
+module.exports = router;

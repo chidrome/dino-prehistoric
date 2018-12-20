@@ -8,13 +8,18 @@ app.use(ejsLayouts);
 // body parser middleware
 app.use(express.urlencoded({extended: false}));
 
+
+
 // home route
 app.get('/', function(req, res){
 	res.send('This is my home route!');
-});
+});	
 
-app.use('/', require('./controller/dinosaurs'));
-// app.use('/', require('./controller/prehistoric_creatures'));
+
+// >>>>>> CONTROLLERS MIDDLEWARE <<<<<<<
+app.use('/dinosaurs', require('./controller/dinosaurs'));
+app.use('/prehistoric_creatures', require('./controller/prehistoric_creatures'));
+
 
 app.listen(8000);
 

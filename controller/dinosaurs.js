@@ -6,28 +6,28 @@ dinoData = JSON.parse(dinoData);
 
 
 // dino index route
-router.get('/dinosaurs', function(req, res){
+router.get('/', function(req, res){
 	var nameFilter = req.query.nameFilter;
 	if(nameFilter){
 		var filteredData = dinoData.filter(function(dino){
 			return dino.name.toLowerCase() === nameFilter.toLowerCase();
 		});
-		res.render('dino/dinosaurs', {myDinos: filteredData});
+		res.render('dino/index', {myDinos: filteredData});
 	} else {
-		res.render('dino/dinosaurs', {myDinos: dinoData});
+		res.render('dino/index', {myDinos: dinoData});
 	}
 	
 });
 
 // dino new route
 router.get('/dinosaurs/new', function(req, res){
-	res.render('new');
+	res.render('dino/new');
 });
 
 // dino show route
 router.get('/dinosaurs/:idx', function(req, res){
 	if(dinoData[req.params.idx-1]){
-		res.render('show', {dino: dinoData[req.params.idx-1]});
+		res.render('dino/show', {dino: dinoData[req.params.idx-1]});
 	} else {
 		res.send('We only have '+dinoData.length+' dinos at this time');
 	}
@@ -45,3 +45,6 @@ router.post('/dinosaurs', function(req, res){
 });
 
 module.exports = router;
+
+
+
