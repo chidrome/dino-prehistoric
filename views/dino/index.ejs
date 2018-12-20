@@ -5,7 +5,13 @@
 </form>
 
 <ul>
-	<% myDinos.forEach(function(dinos){ %>
-		<li><%= dinos.name %> is a <%= dinos.type %></li>
+	<% myDinos.forEach(function(dinos, index){ %>
+		<li>
+			<%= dinos.name %> is a <%= dinos.type %>
+			<a href="/dinosaurs/edit/<%= index %>">Edit</a>
+			<form method="POST" action="/dinosaurs/<%= index %>/?_method=DELETE">
+				<input type="submit" value="Delete">
+			</form>
+		</li>
 	<% }) %>
 </ul>

@@ -13,6 +13,10 @@ router.get('/', function(req, res){
 	res.render('creatures/index', {myCreatures: creaturesData});
 });
 
+// prehistoric new route
+router.get('/creatures/new', function(req, res){
+	
+})
 
 //tell node to export router object
 module.exports = router;
