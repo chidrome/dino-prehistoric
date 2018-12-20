@@ -1,0 +1,12 @@
+<form method="GET" action="/prehistoric_creatures">
+	<label for="nameFilter">Filter by Name</label>
+	<input id="nameFilter" type="text" name="nameFilter">
+	<input type="submit">
+</form>
+
+<ul>
+	<% myDinos.forEach(function(creature){ %>
+		<li><%= creature.type %></li>
+		<img src="<%= creature.img_url %>" style="width: 400px; height: auto; margin-bottom: 40px;"></img>
+	<% }) %>
+</ul>
