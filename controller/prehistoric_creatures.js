@@ -5,8 +5,8 @@ var creaturesData = fs.readFileSync('./prehistoric_creatures.json');
 creaturesData = JSON.parse(creaturesData);
 
 
-//middleware
-// router.use(express.urlencoded({extended: false}));
+// middleware
+router.use(express.urlencoded({extended: false}));
 
 // prehistoric creatures route
 router.get('/prehistoric_creatures', function(req, res){

@@ -13,11 +13,8 @@ app.get('/', function(req, res){
 	res.send('This is my home route!');
 });
 
-
-app.use('/dinosaurs', require('./controller/dinosaurs'));
-// app.use('/prehistoric_creatures', require('./controller/prehistoric_creatures'));
-
-
+app.use('/', require('./controller/dinosaurs'));
+// app.use('/', require('./controller/prehistoric_creatures'));
 
 app.listen(8000);
 

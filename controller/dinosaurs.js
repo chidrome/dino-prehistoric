@@ -12,9 +12,9 @@ router.get('/dinosaurs', function(req, res){
 		var filteredData = dinoData.filter(function(dino){
 			return dino.name.toLowerCase() === nameFilter.toLowerCase();
 		});
-		res.render('dinosaurs/dinosaurs', {myDinos: filteredData});
+		res.render('dino/dinosaurs', {myDinos: filteredData});
 	} else {
-		res.render('dinosaurs/dinosaurs', {myDinos: dinoData});
+		res.render('dino/dinosaurs', {myDinos: dinoData});
 	}
 	
 });
